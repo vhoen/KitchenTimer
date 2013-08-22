@@ -1,0 +1,28 @@
+{
+    "version": "1.2",
+    "name": "Kitchen Timer",
+    "launch_path": "/index.html",
+    "description": "Need to be reminded when your eggs are cooked ?",
+    "icons": {
+        "256": "/img/icon-256.png",
+        "128": "/img/icon-128.png"
+    },
+    "developer": {
+        "name": "vhoen",
+        "url": "https://plus.google.com/106065214887591686402/"
+    },
+    "default_locale": "en",
+    "messages": [
+        { "alarm": "/index.html" }
+     ],
+    "permissions": {
+        "alarms": {
+            "description": "Required to notify timer's end"
+        },
+        "desktop-notification":{
+            "description": "Required to notify timer's end"
+        }
+    },
+    "fullscreen": "true",
+    "installs_allowed_from": ["*"]
+}

@@ -1,0 +1,63 @@
+/* 
+    Document   : styles
+    Created on : 21 mai 2013, 08:45:08
+    Author     : vhoen
+    Description:
+        Purpose of the stylesheet follows.
+*/
+
+root { 
+    display: block;
+}
+
+body{
+    background-color: #000;
+    font-family: Arial, sans-serif;
+    color: #FFF;
+}
+
+.timer {
+    background-color: #E3E3E3;
+    border: 1px solid #FFF;
+    border-radius: 10px;
+    color: #000;
+    display: block;
+    font-size: 2em;
+    margin: 15px;
+    padding: 25px;
+    text-align: center;
+}
+
+form{
+    text-align: center;
+}
+
+select{
+    font-size: 2em;
+    padding: 2%;
+    text-align: right;
+}
+
+button{
+    font-size: 3em;
+    padding: 2%;
+    margin: 1%;
+}
+
+#countDown_1, #startCountDown_1{
+    background-image: url("/img/clock-icon-1.png");
+    background-repeat: no-repeat;
+    background-position: top center;
+}
+
+#countDown_2, #startCountDown_2{
+    background-image: url("/img/clock-icon-2.png");
+    background-repeat: no-repeat;
+    background-position: top center;
+}
+
+#countDown_3, #startCountDown_3{
+    background-image: url("/img/clock-icon-3.png");
+    background-repeat: no-repeat;
+    background-position: top center;
+}
