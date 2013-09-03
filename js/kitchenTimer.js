@@ -1,5 +1,6 @@
 function KitchenTimer(config) {
     this.config = config;
+    this.alarmDate;
     this.countDownLength = 0;
     this.remainingTime = 0;
     this.intervalId = undefined;
@@ -84,6 +85,7 @@ KitchenTimer.prototype.startCountDown = function() {
     self = this;
 
     self.intervalId = setInterval('self.decrementRemainingTime()', 1000);
+    self.alarmDate = new Date(+new Date() + (self.countDownLength * 1000));
     self.setAlarm();
 };
 
@@ -105,9 +107,7 @@ KitchenTimer.prototype.setAlarm = function() {
 
         self = this;
 
-        var alarmDate = new Date(+new Date() + (self.countDownLength * 1000));
-
-        var request = navigator.mozAlarms.add(alarmDate, 'ignoreTimezone', {
+        var request = navigator.mozAlarms.add(self.alarmDate, 'ignoreTimezone', {
             message: 'Timer ' + self.formatDisplay(self.countDownLength) + ' Complete'
         });
 
@@ -131,7 +131,8 @@ KitchenTimer.prototype.cancelAlarm = function() {
 KitchenTimer.prototype.decrementRemainingTime = function() {
     self = this;
 
-    self.setRemainingTime(self.remainingTime - 1);
+    var remainingTime = Math.round((self.alarmDate - new Date()) / 1000);
+    self.setRemainingTime(remainingTime);
     self.updateDisplay();
     if (self.remainingTime === 0) {
         self.stopCountDown();
